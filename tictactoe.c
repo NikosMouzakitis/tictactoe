@@ -571,7 +571,14 @@ void ai_step()
         return;
 
     }
+    if( (step == 3) && (tic_grid[2][1] == 'X') && (tic_grid[1][2] == 'X') && (tic_grid[1][1] == 'O') )
+     {
+        tic_grid[2][2] = 'O';                         // to avoid losing by choosing the best suitable move at this step.
+        squares_filled++;
 
+        return;
+
+    }
     if( (step == 3) && (tic_grid[1][2] == 'X') && (tic_grid[2][0] == 'X') && (tic_grid[1][1] == 'O') )
     {
         tic_grid[2][2] = 'O';                         // to avoid losing by choosing the best suitable move at this step.
